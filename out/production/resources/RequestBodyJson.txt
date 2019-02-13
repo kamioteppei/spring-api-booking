@@ -1,0 +1,60 @@
+method:POST
+url:localhost:8080/api/v1/customers/301/bookings/
+注意:全体を[]で囲むのは、複数のbookingオブジェクトを配列で送信する場合
+
+  {
+    "canceled": false,
+    "customer": {
+      "email": "aa@bb.com",
+      "id": 301,
+      "name": "niko",
+      "password_hash": "ajoijfosj",
+      "token": "akspkpeok"
+    },
+    "hotel": {
+      "id": 101,
+      "name": "tokyu"
+    },
+    "id": 100,
+    "inDate": "2019-02-18",
+    "outDate": "2019-02-19",
+    "room": {
+      "hotel": {
+        "id": 101,
+        "name": "tokyu"
+      },
+      "id": 201,
+      "name": "201"
+    }
+  }
+
+
+method:PUT
+url:localhost:8080/api/v1/customers/301/bookings/56
+注意:全体を[]で囲むのは、複数のbookingオブジェクトを配列で送信する場合
+
+  {
+    "canceled": true,
+    "customer": {
+      "email": "aa@bb.com",
+      "id": 301,
+      "name": "niko",
+      "password_hash": "ajoijfosj",
+      "token": "akspkpeok"
+    },
+    "hotel": {
+      "id": 101,
+      "name": "tokyu"
+    },
+    "id": 56,
+    "inDate": "2019-02-19",
+    "outDate": "2019-02-20",
+    "room": {
+      "hotel": {
+        "id": 101,
+        "name": "tokyu"
+      },
+      "id": 211,
+      "name": "211"
+    }
+  }
