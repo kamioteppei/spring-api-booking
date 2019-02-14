@@ -1,10 +1,10 @@
-package booking.service;
+package booking.domain.service;
 
 
-import booking.repository.entity.Booking;
-import booking.repository.entity.Customer;
-import booking.repository.entity.Hotel;
-import booking.repository.entity.Room;
+import booking.domain.repository.entity.Booking;
+import booking.domain.repository.entity.Customer;
+import booking.domain.repository.entity.Hotel;
+import booking.domain.repository.entity.Room;
 
 import java.util.List;
 

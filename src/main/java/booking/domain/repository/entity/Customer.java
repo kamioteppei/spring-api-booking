@@ -1,4 +1,4 @@
-package booking.repository.entity;
+package booking.domain.repository.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class Room implements Serializable {
+public class Customer implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -21,8 +21,13 @@ public class Room implements Serializable {
     @Column(length = 30, nullable = false)
     private String name;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "hotel_id")
-    private Hotel hotel;
+    @Column(length = 256, nullable = true)
+    private String email;
+
+    @Column(length = 256, nullable = true)
+    private String password_hash;
+
+    @Column(length = 256, nullable = true)
+    private String token;
 
 }

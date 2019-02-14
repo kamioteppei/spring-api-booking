@@ -1,20 +1,15 @@
-package booking.controller;
+package booking.domain.controller;
 
-import booking.repository.entity.Booking;
-import booking.repository.entity.Customer;
-import booking.repository.entity.Hotel;
-import booking.repository.entity.Room;
-import booking.service.BookingServiceImpl;
+import booking.domain.repository.entity.Booking;
+import booking.domain.repository.entity.Customer;
+import booking.domain.service.BookingServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -60,12 +55,20 @@ public class BookingController {
                                 , @PathVariable(value = "bookingId")Integer bookingId //
                                 , @Valid @RequestBody Booking booking) {
 
-
         log.info("call modifyBooking...");
 
         Booking bookingModified = bookingService.saveBooking(booking);
 
         return bookingModified;
+    }
+
+    @DeleteMapping("/customers/{customerId}/bookings/{bookingId}")
+    public void deleteBooking(@PathVariable(value = "customerId")Integer customerId //
+            , @PathVariable(value = "bookingId")Integer bookingId) {
+
+        log.info("call deleteBooking...");
+
+        bookingService.deleteBooking(bookingId);
     }
 
 }

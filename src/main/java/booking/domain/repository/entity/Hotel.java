@@ -1,4 +1,4 @@
-package booking.repository.entity;
+package booking.domain.repository.entity;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,10 +1,10 @@
 package booking;
 
-import booking.repository.entity.Booking;
-import booking.repository.entity.Customer;
-import booking.repository.entity.Hotel;
-import booking.repository.entity.Room;
-import booking.service.BookingServiceImpl;
+import booking.domain.repository.entity.Booking;
+import booking.domain.repository.entity.Customer;
+import booking.domain.repository.entity.Hotel;
+import booking.domain.repository.entity.Room;
+import booking.domain.service.BookingServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
