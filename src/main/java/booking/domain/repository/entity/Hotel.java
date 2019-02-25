@@ -19,4 +19,16 @@ public class Hotel implements Serializable {
 
     @Column(length = 30, nullable = false)
     private String name;
+
+    @Column(nullable = false)
+    private Integer charge;
+
+    @Column(length = 60)
+    private String option1;
+
+    @Column(length = 60)
+    private String option2;
+
+    @Column(length = 60)
+    private String option3;
 }
