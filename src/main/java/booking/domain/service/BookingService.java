@@ -26,6 +26,6 @@ public interface BookingService {
 
     public List<Room> getRoomList();
 
-    public List<Customer> getCustomerList();
+//    public List<Customer> getCustomerList();
 
 }

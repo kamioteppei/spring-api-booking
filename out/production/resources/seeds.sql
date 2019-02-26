@@ -65,13 +65,12 @@ CREATE TABLE customer(
 ) engine=innodb
 ;
 
-INSERT INTO customer
-    (`id`, `name`, `email`, `password_hash`, `token`)
-VALUES
-    (301, 'niko', NULL, 'aoisdjfodjfoi', 'jofijosjfosj'),
-    (302, 'puffy', NULL, 'shifhihfiwhf', 'sjoeowojo')
-;
-
+-- INSERT INTO customer
+--     (`id`, `name`, `email`, `password_hash`, `token`)
+-- VALUES
+--     (301, 'aaaaa', NULL, 'aoisdjfodjfoi', 'jofijosjfosj'),
+--     (302, 'bbbbb', NULL, 'shifhihfiwhf', 'sjoeowojo')
+-- ;
 
 DROP TABLE booking
 ;
@@ -83,10 +82,7 @@ CREATE TABLE booking (
     `customer_id`   int          not null,
     `in_date`       datetime     not null,
     `out_date`      datetime     not null,
-    `canceled`      boolean,
-    FOREIGN KEY (hotel_id)     REFERENCES hotel(id),
-    FOREIGN KEY (room_id)      REFERENCES room(id),
-    FOREIGN KEY (customer_id)  REFERENCES customer(id)
+    `canceled`      boolean
 ) engine=innodb
 ;
 

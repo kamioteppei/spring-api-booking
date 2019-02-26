@@ -146,3 +146,20 @@ curl -v -H "Accept: application/json" \
     "password": "pass1"
     }
 }'  http://localhost:8080/users/sign-up
+
+
+curl -v -H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST -d '{
+    "username": "user1",
+    "password": "pass1"
+    }
+}'  http://localhost:8080/login
+
+curl -v \
+-H "Content-Type: application/json" \
+-X POST -d '{
+    "username": "user1",
+    "password": "pass1"
+    }
+}'  http://localhost:8080/login

@@ -15,7 +15,6 @@ public class Customer implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
     private Integer id;
 
     @Column(length = 30, nullable = false)
