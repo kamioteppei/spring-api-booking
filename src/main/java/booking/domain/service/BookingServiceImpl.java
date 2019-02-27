@@ -33,8 +33,8 @@ public class BookingServiceImpl implements BookingService {
     @Autowired
     private RoomRepository roomRepository;
 
-//    @Autowired
-//    private CustomerRepository customerRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
 
 
     @Override
@@ -98,10 +98,14 @@ public class BookingServiceImpl implements BookingService {
         return roomRepository.findAll();
     }
 
-//    @Override
-//    public List<Customer> getCustomerList() {
-//        return customerRepository.findAll();
-//    }
+    @Override
+    public List<Customer> getCustomerList() {
+        return customerRepository.findAll();
+    }
 
+    @Override
+    public Customer getCustomer(String name) {
+        return customerRepository.findByName(name).get(0);
+    }
 
 }

@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @PostMapping("/sign-up")
-    public ApplicationUser signUp(@RequestBody ApplicationUser user) {
+    public void signUp(@RequestBody ApplicationUser user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         applicationUserRepository.save(user);
 
@@ -35,9 +35,5 @@ public class UserController {
         customer.setId(Integer.valueOf(String.valueOf(user.getId())));
         customer.setName(user.getUsername());
         customerRepository.save(customer);
-
-        // set password dummy value.
-        user.setPassword(null);
-        return user;
     }
 }

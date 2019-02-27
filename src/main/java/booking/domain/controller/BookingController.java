@@ -20,6 +20,14 @@ public class BookingController {
     @Autowired
     BookingServiceImpl bookingService;
 
+    @GetMapping("/customers/{customerName}")
+    public Customer getCustomer(@PathVariable(value = "customerName") String name) {
+
+        log.info("call getCustomer...");
+
+        return bookingService.getCustomer(name);
+    }
+
     @GetMapping("/customers/{customerId}/bookings")
     public List<Booking> getMyBookings(@PathVariable(value = "customerId") Integer customerId) {
 

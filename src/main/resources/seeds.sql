@@ -58,7 +58,7 @@ DROP TABLE customer
 
 CREATE TABLE customer(
     `id`            int          not null  primary key ,
-    `name`          varchar(256) not null  ,
+    `name`          varchar(256) not null  unique ,
     `email`         varchar(256),
     `password_hash` varchar(256),
     `token`         varchar(256)

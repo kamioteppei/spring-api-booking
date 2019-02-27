@@ -1,10 +1,7 @@
 package booking.domain.controller;
 
 import booking.domain.model.Bookable;
-import booking.domain.repository.entity.Booking;
-import booking.domain.repository.entity.Customer;
 import booking.domain.service.BookableServiceImpl;
-import booking.domain.service.BookingServiceImpl;
 import lombok.val;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.sql.Date;
 import java.util.List;
 
