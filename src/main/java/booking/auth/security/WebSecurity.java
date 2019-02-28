@@ -37,7 +37,21 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()))
                 // this disables session creation on Spring Security
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+
+//                .and()
+//                .formLogin()
+//                .loginPage("/login.html")
+//                .loginProcessingUrl("/perform_login")
+//                .defaultSuccessUrl("/", false)
+                //.failureUrl("/login.html?error=true")
+//                .failureHandler(authenticationFailureHandler())
+//                .and()
+//                .logout()
+//                .logoutUrl("/perform_logout")
+//                .deleteCookies("JSESSIONID")
+//                .logoutSuccessHandler(logoutSuccessHandler())
+        ;
     }
 
     @Override

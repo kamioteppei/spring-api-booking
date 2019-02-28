@@ -6,6 +6,8 @@ import booking.domain.service.BookingServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -25,6 +27,18 @@ public class BookingController {
 
         log.info("call getCustomer...");
 
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        // JWTAuthenticationFilter#successfulAuthenticationで設定したusernameを取り出す
+        String username = (String) (authentication.getPrincipal());
+
+        log.info("リクエストパラメーターのユーザーid：" + name + "、jwtのユーザーid：" + username);
+
+        if(!name.equals(username)){
+            throw new IllegalAccessError("Bad Request!");
+        }
+
         return bookingService.getCustomer(name);
     }
 
@@ -36,6 +50,8 @@ public class BookingController {
         Customer customer = new Customer();
         customer.setId(customerId);
 
+        // TODO customerのidentityチェック
+
         return bookingService.getBookingList(customer);
     }
 
@@ -45,6 +61,8 @@ public class BookingController {
 
         log.info("call getBookingById...");
 
+        // TODO customerのidentityチェック
+
         return bookingService.getBooking(bookingId);
     }
 
@@ -53,6 +71,8 @@ public class BookingController {
                                 , @Valid @RequestBody Booking booking) {
 
         log.info("call createBooking...");
+
+        // TODO customerのidentityチェック
 
         Booking bookingSaved = bookingService.saveBooking(booking);
         return bookingSaved;
@@ -65,6 +85,8 @@ public class BookingController {
 
         log.info("call modifyBooking...");
 
+        // TODO customerのidentityチェック
+
         Booking bookingModified = bookingService.saveBooking(booking);
 
         return bookingModified;
@@ -75,6 +97,8 @@ public class BookingController {
             , @PathVariable(value = "bookingId")Integer bookingId) {
 
         log.info("call deleteBooking...");
+
+        // TODO customerのidentityチェック
 
         bookingService.deleteBooking(bookingId);
     }
