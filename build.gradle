@@ -14,7 +14,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 bootJar {
-    baseName = 'gs-relational-data-access'
+    baseName = 'spring-api-booking'
     version =  '0.1.0'
 }
 
