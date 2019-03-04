@@ -8,6 +8,10 @@ spring:
     database: MYSQL
     hibernate.ddl-auto: update
 
+tomcat:
+  ajp:
+    port: 8009
+
 logging.level:
   org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
   org.hibernate:
